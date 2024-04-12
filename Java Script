@@ -1,0 +1,27 @@
+function calculateAge() {
+    var dobYear = document.getElementById("dobYear").value;
+    var dobMonth = document.getElementById("dobMonth").value;
+    var dobDay = document.getElementById("dobDay").value;
+
+    var dob = new Date(dobYear, dobMonth - 1, dobDay);
+    var now = new Date();
+
+    var ageYears = now.getFullYear() - dob.getFullYear();
+    var monthDiff = now.getMonth() - dob.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < dob.getDate())) {
+        ageYears--;
+        monthDiff += 12;
+    }
+
+    var ageMonths = monthDiff;
+    var ageDays = now.getDate() - dob.getDate();
+    if (ageDays < 0) {
+        var lastMonth = new Date(now.getFullYear(), now.getMonth() - 1, 0);
+        ageDays += lastMonth.getDate();
+        ageMonths--;
+    }
+
+    var ageMinutes = Math.floor((now - dob) / (1000 * 60));
+
+    document.getElementById("age").innerHTML = "You are " + ageYears + " years, " + ageMonths + " months, " + ageDays + " days, and " + ageMinutes + " minutes old.";
+}
