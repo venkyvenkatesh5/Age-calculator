@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> Age calculator</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #87CEEB; /* Light gray background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    background-color: #ffffff; /* White background for the calculator */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  h2 {
+    text-align: center;
+    color: #333333; /* Dark gray text color */
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    color: #666666; /* Gray text color */
+  }
+
+  input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #cccccc; /* Light gray border */
+    border-radius: 4px;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #FFC0CB; /* Green button */
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #FFC0CB; /* Darker green button on hover */
+  }
+
+  #age {
+    margin-top: 20px;
+    text-align: center;
+    color: #333333; /* Dark gray text color */
+  }
+</style>
+</head>
+<body>
+
+<label for="dob"></label>
+<input type="number" id="dobYear" 
+placeholder="YYYY"
+min="1900" max="2099"> -
+<input type="number" id="dobMonth"
+placeholder="MM"
+min="1" max="12"> -
+<input type="number" id="dobDay" 
+placeholder="DD" 
+min="1" max="31">
+<button onclick="calculateAge()">Calculate Age</button>
+
+<div id="age"></div>
+<script>
+function calculateAge() {
+    var dobYear = document.getElementById("dobYear").value;
+    var dobMonth = document.getElementById("dobMonth").value;
+    var dobDay = document.getElementById("dobDay").value;
+
+    var dob = new Date(dobYear, dobMonth - 1, dobDay);
+    var now = new Date();
+
+    var ageYears = now.getFullYear() - dob.getFullYear();
+    var monthDiff = now.getMonth() - dob.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < dob.getDate())) {
+        ageYears--;
+        monthDiff += 12;
+    }
+
+    var ageMonths = monthDiff;
+    var ageDays = now.getDate() - dob.getDate();
+    if (ageDays < 0) {
+        var lastMonth = new Date(now.getFullYear(), now.getMonth() - 1, 0);
+        ageDays += lastMonth.getDate();
+        ageMonths--;
+    }
+
+    var ageMinutes = Math.floor((now - dob) / (1000 * 60));
+
+    document.getElementById("age").innerHTML = "You are " + ageYears + " years, " + ageMonths + " months, " + ageDays + " days, and " + ageMinutes + " minutes old.";
+}
+</script>
+</body>
+</html>
