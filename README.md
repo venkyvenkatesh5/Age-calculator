@@ -1,4 +1,10 @@
-
+# 🎉 Age Calculator 🕰️
+## 🚀 Features
+✅ Calculates age **accurately** in multiple time units  
+✅ **Real-time updates** every second  
+✅ **Responsive and modern UI** with a gradient background  
+✅ **Error handling** for invalid inputs  
+✅ **Smooth hover effects** on buttons  
 ## 🏃 How to Run
 1. **Download or clone** this repository.  
 2. Open `index.html` in your browser.  
