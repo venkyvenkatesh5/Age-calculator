@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> Age calculator</head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+</head>
 <body>
-<label for="dob"></label>
-<input type="number" id="dobYear" 
-placeholder="YYYY"
-min="1900" max="2099"> -
-<input type="number" id="dobMonth"
-placeholder="MM"
-min="1" max="12"> -
-<input type="number" id="dobDay" 
-placeholder="DD" 
-min="1" max="31">
-<button onclick="calculateAge()">Calculate Age</button>
-<div id="age"></div>
-<script>
-</script>
+    <h2>Age Calculator</h2>
+    <label for="dobYear">Enter your birthdate:</label><br>
+    <input type="number" id="dobYear" placeholder="YYYY" min="1900" max="2099"> -
+    <input type="number" id="dobMonth" placeholder="MM" min="1" max="12"> -
+    <input type="number" id="dobDay" placeholder="DD" min="1" max="31">
+    <br>
+    <button onclick="calculateAge()">Calculate Age</button>
+    <div id="age"></div>
 </body>
 </html>
