@@ -1,0 +1,50 @@
+body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #44cfdc, #ff3cd5);
+            color: white;
+            padding: 50px;
+        }
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 80px;
+            padding: 10px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1em;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            outline: none;
+            margin: 5px;
+        }
+        input::placeholder {
+            color: #ddd;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s ease-in-out;
+        }
+        button:hover {
+            background: #218838;
+        }
+        #age {
+            margin-top: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
